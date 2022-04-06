@@ -1,0 +1,76 @@
+{% extends '/jizhang/base.html' %}
+
+{% block title  %}
+登录后
+{% endblock title %}
+
+
+{% block zhuti %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form method="post">
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput"></label>
+            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="支出" name="zhichu">
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup"></label>
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="收入" name="shouru">
+            </div>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup"></label>
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="备注" name="beizhu">
+            </div>
+          </div>
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">提交</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container table-responsive-sm">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">日期</th>
+        <th scope="col">支出</th>
+        <th scope="col">收入</th>
+        <th scope="col">余额</th>
+        <th scope="col">备注</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      {% for i in iteamlist %}
+       <tr>
+        <th scope="row">{{adddatalist[i-1]}}</th>
+        <td>{{zhichulist[i-1]}}</td>
+        <td>{{shourulist[i-1]}}</td>
+        <td>{{yuerlist[i-1]}}</td>
+        <td>{{beizhulist[i-1]}}</td>
+       </tr>
+      {% endfor %}
+       <tr>
+        <th scope="row">合计</th>
+        <td>{{zhichuheji}}</td>
+        <td>{{shouruheji}}</td>
+        <td>{{yuerheji}}</td>
+        <td>---</td>
+       </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock zhuti %}
+
