@@ -7,7 +7,7 @@ def login1():
     if request.method == "POST":
       res=request.form.get('email')
       passwd=request.form.get('password')
-      if res == '*******' and passwd == '*******':
+      if res == '123@qq.com' and passwd == "123":
             return redirect(url_for('jizhang.afterlogin'))
       else:
             flash ('用户名或密码错误，请重试！')

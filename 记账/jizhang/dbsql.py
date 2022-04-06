@@ -1,10 +1,10 @@
 import pymysql
 class db1():
-    def __init__(self,host,user,password,database):
-        self.host=host
-        self.user=user
-        self.password=password
-        self.database=database
+    def __init__(self):
+        self.host=''
+        self.user=''
+        self.password=''
+        self.database=''
     
     def chaxundb(self):
         mysql=pymysql.connect(host=self.host,user=self.user,password=self.password,database=self.database)
@@ -26,3 +26,16 @@ class db1():
         #print(res)
         cur.close()
         return res
+
+    def qingkongsql(self):
+        mysql=pymysql.connect(host=self.host,user=self.user,password=self.password,database=self.database)
+        cur=mysql.cursor()
+        sql = "truncate zhangben"
+        cur.execute(sql)
+        mysql.commit()
+        res=cur.fetchall()
+        #print(res)
+        cur.close()
+        return res
+#res=db1()
+#res.qingkongsql()

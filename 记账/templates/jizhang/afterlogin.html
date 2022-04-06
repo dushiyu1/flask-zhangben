@@ -50,43 +50,16 @@
       
     </thead>
     <tbody>
-      
-       <tr>
-        <th scope="row">{{nowlist[-1]}}</th>
-        <td>{{zhichulist[-1]}}</td>
-        <td>{{shourulist[-1]}}</td>
-        <td>{{yuerlist[-1]}}</td>
-        <td>{{beizhulist[-1]}}</td>
-       </tr>
-       <tr>
-        <th scope="row">{{nowlist[-2]}}</th>
-        <td>{{zhichulist[-2]}}</td>
-        <td>{{shourulist[-2]}}</td>
-        <td>{{yuerlist[-2]}}</td>
-        <td>{{beizhulist[-2]}}</td>
-       </tr>
-       <tr>
-        <th scope="row">{{nowlist[-3]}}</th>
-        <td>{{zhichulist[-3]}}</td>
-        <td>{{shourulist[-3]}}</td>
-        <td>{{yuerlist[-3]}}</td>
-        <td>{{beizhulist[-3]}}</td>
-       </tr>
-       <tr>
-        <th scope="row">{{nowlist[-4]}}</th>
-        <td>{{zhichulist[-4]}}</td>
-        <td>{{shourulist[-4]}}</td>
-        <td>{{yuerlist[-4]}}</td>
-        <td>{{beizhulist[-4]}}</td>
-       </tr>
-       <tr>
-        <th scope="row">{{nowlist[-5]}}</th>
-        <td>{{zhichulist[-5]}}</td>
-        <td>{{shourulist[-5]}}</td>
-        <td>{{yuerlist[-5]}}</td>
-        <td>{{beizhulist[-5]}}</td>
-       </tr>
-  
+      {% for i in iteamlist %}
+      <tr>
+       <th scope="row">{{adddatalist[i-1]}}</th>
+       <td>{{zhichulist[i-1]}}</td>
+       <td>{{shourulist[i-1]}}</td>
+       <td>{{yuerlist[i-1]}}</td>
+       <td>{{beizhulist[i-1]}}</td>
+      </tr>
+     {% endfor %}
+     
        <tr>
         <th scope="row">合计</th>
         <td>{{zhichuheji}}</td>
